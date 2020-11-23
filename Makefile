@@ -6,7 +6,7 @@
 #    By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 16:09:02 by mgallizz          #+#    #+#              #
-#    Updated: 2020/11/20 16:10:44 by mgallizz         ###   ########.fr        #
+#    Updated: 2020/11/23 09:33:23 by mgallizz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ SRC =	ft_memset.c \
 				ft_tolower.c \
 
 OBJ = $(SRC:.c=.o)
-
 
 all: $(NAME)
 
