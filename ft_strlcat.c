@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:04:32 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/20 19:31:20 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/11/26 17:20:58 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 	{
 		while (dst[i] && (size - 1))
 			i++;
-		dst[i] == src[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}

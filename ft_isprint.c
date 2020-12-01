@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:31:41 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/20 19:38:38 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/11/25 17:42:35 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int		ft_isprint(int c)
 {
 	if(c >= 0 && c <= 32 || c == 127)
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }

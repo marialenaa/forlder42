@@ -6,7 +6,7 @@
 /*   By: mgallizz </var/mail/mgallizz>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 18:23:28 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/20 18:38:38 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/01 19:25:04 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (s1 && s2 && n)
+	unsigned char *ptr1;
+	unsigned char *ptr2;
+
+	ptr1 = (unsigned char*)s1;
+	ptr2 = (unsigned char*)s2;
+
+	while (n--)
 	{
-		if(*s1 == *s2)
+		if(*ptr1 == *ptr2)
 		{
-			s1++;
-			s2++;
-			n--;
+			ptr1++;
+			ptr2++;
 		}
-		return ((int)*s1 - (int)*s2);
 	}
+	return (*ptr1 - *ptr2);
 }

@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 17:14:51 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/20 17:58:31 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/11/23 18:44:48 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	unsigned int i;
 
+	i = 0;
 	while (n)
 	{
-		(char*)s == '\n';
-		s++;
+		((char*)s)[i] = '\0';
+		i++;
 		n--;
 	}
 }
