@@ -6,13 +6,13 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 14:51:05 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/18 14:58:03 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/03 19:28:49 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	fr_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t i;
 

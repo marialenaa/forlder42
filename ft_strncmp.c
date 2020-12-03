@@ -6,16 +6,19 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:11:49 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/18 17:32:17 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/03 17:57:49 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 1;
-	while (s1 && s2 && i <= n)
+
+	while (s1[i] && s2[i] && i < n)
 	{
 		if (s1[i] == s2[i])
 			i++;

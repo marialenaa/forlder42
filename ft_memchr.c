@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 15:25:34 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/23 19:07:17 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/02 09:25:45 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (n)
+	unsigned char *scpy;
+
+	scpy = (unsigned char*)s;
+	while (--n)
 	{
-		if((unsigned char)s == (unsigned char)c)
-			return ((unsigned char*)s);
-		s++;
-		n--;
+		if (*scpy == (unsigned char)c)
+			return (scpy);
+		scpy++;
 	}
 	return (NULL);
 }

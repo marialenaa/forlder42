@@ -3,23 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgallizz </var/mail/mgallizz>              +#+  +:+       +#+        */
+/*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 17:47:57 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/18 18:35:20 by mgallizz         ###   ########.fr       */
+/*   Created: 2020/12/03 10:28:22 by mgallizz          #+#    #+#             */
+/*   Updated: 2020/12/03 15:28:00 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t		ft_strlcpy(char *dst, const char *src, size_t size)
+#include "libft.h"
+
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while (src && (++i <= (size - 1)))
+	if (!dstsize)
+		return (ft_strlen((char*)src));
+	while (src[i] && (i < dstsize))
 	{
 		dst[i] = src[i];
+		i++;
 	}
-	i++;
-	dst[i] = '\0'
+	dst[i] = '\0';
 	return (i);
 }

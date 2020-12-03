@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:12 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/01 18:43:17 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/03 10:27:26 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (--n)
 			((char *)dest)[n] = ((char *)src)[n];
-	return (dest);
+		return (dest);
 	}
 	return ((char *)ft_memcpy(dest, src, !n));
 }

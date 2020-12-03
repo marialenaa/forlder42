@@ -6,35 +6,33 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:04:56 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/19 15:32:54 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/03 15:21:19 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int i;
+	size_t i;
+	size_t sub;
 
 	i = 0;
-	save = 0;
-	while (*big && *little && *big != *little)
+	if (!little)
+		return ((char*)big);
+	while (big[i] && i < len)
 	{
-		big++;
-		i++;
-		if (i >= (len - 1)
-				return (NULL);
-	}
-	if (*big == *little && *big != '\0')
-	{
-		while (*big == *little)
+		sub = 0;
+		if (big[i] == little[sub])
 		{
-	 		if(i >= len - 1)
-				return ((char*)(big + i));
-			big++;
-			little++;
-			i++;
+			while (big[i + sub] == little[sub])
+			{
+				sub++;
+				if (!little[sub])
+					return ((char*)big + i);
+			}
 		}
+		i++;
 	}
-	if (i >= len - 1 || *little == '\0')
-		return ((char*)(big + i));
 	return (NULL);
 }
