@@ -6,21 +6,25 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:12 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/03 10:27:26 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/04 10:27:39 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (!dest || !src || !n)
-		return (0);
-	if (dest > src)
+	if (!dest && !src)
+		return (NULL);
+	if (dest >= src)
 	{
-		while (--n)
-			((char *)dest)[n] = ((char *)src)[n];
-		return (dest);
+		while (n > 0)
+		{
+			((char *)dest)[n - 1] = ((char *)src)[n - 1];
+			n--;
+		}
 	}
-	return ((char *)ft_memcpy(dest, src, !n));
+	else 
+		ft_memcpy(dest, src, n);
+	return (dest);
 }

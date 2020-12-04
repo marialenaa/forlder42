@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 16:19:38 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/03 19:08:56 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/03 22:00:57 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_strdup(const char *s);
 void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_memset(void *dest, int val, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *to, size_t count);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);

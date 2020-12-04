@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:04:56 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/03 15:21:19 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/04 16:24:01 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t sub;
 
 	i = 0;
-	if (!little)
+	if (ft_strlen(little) == 0 || !len)
 		return ((char*)big);
-	while (big[i] && i < len)
+	while (i < len--)
 	{
 		sub = 0;
-		if (big[i] == little[sub])
+		while (big[i + sub] == little[sub])
 		{
-			while (big[i + sub] == little[sub])
-			{
-				sub++;
-				if (!little[sub])
-					return ((char*)big + i);
-			}
+			sub++;
+			if (little[sub] == '\0')
+				return ((char*)big + i); 
 		}
 		i++;
 	}

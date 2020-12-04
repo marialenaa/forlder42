@@ -6,46 +6,48 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:51:40 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/03 19:05:40 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/04 23:53:24 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	ft_isinset(const char *set, char c)
+{
+	int i;
+	
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char    *ft_strtrim(char const *s1, char const *set)
 {
 	char *cpy;
 	int i;
-	int set_len;
-	int s1_len;
+	int start;
+	int end;
 
 	i = 0;
-	set_len = ft_strlen(set);
-	s1_len = ft_strlen(s1);
-	if (!(cpy = malloc(sizeof(char) * s1_len)))
+	start = 0;
+	if (s1 && set)
+	{
+		end = ft_strlen(s1);
+		while (s1[start] && ft_isinset(set, s1[start]))
+			start++;
+		while (start < end && ft_isinset(set, s1[end -1]))
+			end--;
+		if (!(cpy = malloc(sizeof(char) * ((end - start) + 1))))
 			return (NULL);
-	if (ft_strncmp(s1, set, set_len) == 0)
-	{
-		while ((set_len + i) <= (s1_len - set_len))
-		{		
-			cpy[i] = s1[set_len + i];
-			i++;
-		}
-	}
-	else
-	{
-		while (i++ <= (s1_len - set_len))
-			cpy[i] = s1[i];
-	}
-	if ((ft_strncmp(&s1[s1_len - set_len], set, set_len)) == 0)
-	{
+		while (start < end)
+			cpy[i++] = s1[start++];
 		cpy[i] = '\0';
 		return (cpy);
 	}
-	else
-	{
-		while (i++ < s1_len)
-			cpy[i] = s1[i];
-	}
-	return (cpy);
+	return (NULL);
 }

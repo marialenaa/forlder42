@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 18:44:28 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/03 10:25:21 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/03 22:55:33 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 
 	destcpy = (unsigned char *)dest;
 	unch = (unsigned char)c;
-	if (!(dest || src || unch))
-		return (NULL);
-	while (n)
+	while (n--)
 	{
 		*destcpy = *(unsigned char *)src;
 		if (*(unsigned char *)src == unch)
-			return (destcpy);
-		n--;
+			return (destcpy + 1);
 		src++;
 		destcpy++;
 	}

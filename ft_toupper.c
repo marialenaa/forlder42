@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 15:46:46 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/11/18 15:53:39 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/04 11:05:59 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@ int		ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	return (0);
+	return (c);
 }
