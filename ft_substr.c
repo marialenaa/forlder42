@@ -6,19 +6,19 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:48:46 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/04 23:57:41 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/07 16:47:23 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *str;
-	size_t j;
+	char	*str;
+	size_t	j;
 
 	j = 0;
-	if (len && s && len)
+	if (s)
 	{
 		if (!(str = malloc((len + 1) * sizeof(char))))
 			return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:12 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/04 10:27:39 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/06 22:57:48 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			n--;
 		}
 	}
-	else 
+	else
 		ft_memcpy(dest, src, n);
 	return (dest);
 }

@@ -6,16 +6,16 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:51:40 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/04 23:53:24 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/07 09:32:01 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isinset(const char *set, char c)
+static int		ft_isinset(const char *set, char c)
 {
 	int i;
-	
+
 	i = 0;
 	while (set[i])
 	{
@@ -26,12 +26,12 @@ static int	ft_isinset(const char *set, char c)
 	return (0);
 }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
-	char *cpy;
-	int i;
-	int start;
-	int end;
+	char	*cpy;
+	int		i;
+	int		start;
+	int		end;
 
 	i = 0;
 	start = 0;
@@ -40,7 +40,7 @@ char    *ft_strtrim(char const *s1, char const *set)
 		end = ft_strlen(s1);
 		while (s1[start] && ft_isinset(set, s1[start]))
 			start++;
-		while (start < end && ft_isinset(set, s1[end -1]))
+		while (start < end && ft_isinset(set, s1[end - 1]))
 			end--;
 		if (!(cpy = malloc(sizeof(char) * ((end - start) + 1))))
 			return (NULL);

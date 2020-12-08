@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:47:50 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/04 11:15:48 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/07 16:18:35 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	char *ptr;
 
-	i = 0;
-	while (s[i])
+	ptr = (char *)s;
+	while (*ptr)
 	{
-		if (s[i] == c)
-			return ((char*)&s[i]);
-		i++;
+		if (*ptr == (char)c)
+			return (ptr);
+		ptr++;
 	}
-	if (s[i] == '\0' && c == '\0')
-		return ((char*)&s[i]);
+	if (*ptr == (char)c)
+		return (ptr);
 	return (NULL);
 }

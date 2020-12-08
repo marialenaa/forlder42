@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:28:22 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/04 12:21:10 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/06 23:15:40 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t i;
 
 	i = 0;
-	if(!dst || !src)
+	if (!dst || !src)
 		return (0);
 	if (!dstsize)
 		return (ft_strlen(src));
@@ -25,7 +25,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	{
 		dst[i] = src[i];
 		i++;
-	}	
+	}
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
