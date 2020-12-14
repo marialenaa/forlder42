@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 14:59:19 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/11 20:05:06 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/14 10:52:06 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static void		ft_make_positive(long **n)
 		**n *= -1;
 }
 
-static long		ft_nb_len_isneg(long *n, int *minus)
+static int		ft_nb_len_isneg(long *n, int *minus)
 {
 	int			nb_len;
-	int			res;
+	long		res;
 	long		ncpy;
 
 	ncpy = *n;
@@ -50,15 +50,15 @@ char			*ft_itoa(int n)
 {
 	char		*str;
 	int			nb_len;
-	int		res;
+	int			res;
 	int			minus;
 	long		ncpy;
 
 	ncpy = (long)n;
 	minus = 1;
-	if (!n || n == 0)
-		return (0);
 	nb_len = ft_nb_len_isneg(&ncpy, &minus);
+	if (!n)
+		nb_len = 1;
 	if (!(str = malloc(sizeof(char) * (nb_len + 1))))
 		return (NULL);
 	str[nb_len] = '\0';
