@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 14:09:12 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/07 18:43:12 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:32:46 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			new;
+	char			*scpy;
 	unsigned int	i;
-	unsigned int	scpylen;
 
+	i = 0;
 	if (!s || !f)
 		return (NULL);
-	scpylen = ft_strlen(s);
-	i = 0;
-	if (!(new = malloc(sizeof(char) * scpylen + 1)))
+	if (!(scpy = malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
 	while (s[i])
 	{
-		new[i] = f(i, s[i]);
+		scpy[i] = f(i, s[i]);
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
+	scpy[i] = '\0';
+	return (scpy);
 }

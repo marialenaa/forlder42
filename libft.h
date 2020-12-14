@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 16:19:38 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/07 18:40:24 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/11 15:20:21 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <string.h>
 
+char	*ft_itoa(int n);
+char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strjoin(char const *s1, char const *s2);
