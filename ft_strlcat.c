@@ -6,11 +6,11 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:04:32 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/04 14:35:06 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/15 12:14:04 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

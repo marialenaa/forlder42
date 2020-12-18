@@ -6,13 +6,13 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 10:29:01 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/04 17:28:25 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/15 10:56:51 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_strdup(const char *s)
+char		*ft_strdup(const char *s)
 {
 	char	*cpy;
 	size_t	i;

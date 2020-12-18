@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/19 15:48:13 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/14 19:17:23 by mgallizz         ###   ########.fr       */
+/*   Created: 2020/12/14 14:36:14 by mgallizz          #+#    #+#             */
+/*   Updated: 2020/12/14 23:41:21 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_atoi(const char *nptr)
-{
-	int		i;
-	int		sign;
-	long	res;
+#include "libft.h"
 
-	i = 0;
-	res = 0;
-	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+void				ft_putnbr_fd(int n, int fd)
+{
+	unsigned int	cpy;
+
+	if (fd < 0)
+		return ;
+	if (n == 0)
 	{
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
+		write(fd, "0", 1);
+		return ;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	if (n < 0)
 	{
-		res = res * 10 + (nptr[i] - '0');
-		i++;
+		write(fd, "-", 1);
+		cpy = -n;
 	}
-	return (res * sign);
+	else
+		cpy = n;
+	if (cpy >= 10)
+	{
+		ft_putnbr_fd((cpy / 10), fd);
+		cpy %= 10;
+	}
+	cpy += 48;
+	write(fd, &cpy, 1);
 }
