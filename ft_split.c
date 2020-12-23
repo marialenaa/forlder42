@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 09:34:02 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/11 14:58:29 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/23 10:04:03 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char					**ft_split(char const *s, char c)
 	char				**tab;
 	size_t				word;
 
-	if (!s || !c)
+	if (!*s || !c)
 		return (NULL);
 	word = ft_word((char *)s, c);
 	if (!(tab = malloc(sizeof(char *) * (word + 1))))

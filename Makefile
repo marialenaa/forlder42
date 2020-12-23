@@ -6,7 +6,7 @@
 #    By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 16:09:02 by mgallizz          #+#    #+#              #
-#    Updated: 2020/12/17 18:15:38 by mgallizz         ###   ########.fr        #
+#    Updated: 2020/12/19 19:08:49 by mgallizz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,13 +34,10 @@ OBJ = $(SRC:.c=.o)
 
 BONUSOBJ = $(BONUSSRC:.c=.o)
 
-all: $(NAME)
-
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus : all $(BONUSOBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUSOBJ)
+all: $(NAME)
 
 clean:
 	$(RM) $(OBJ) $(BONUSOBJ)
@@ -50,6 +47,9 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re 
+bonus : $(BONUSOBJ) $(OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUSOBJ)
+
+.PHONY: all clean fclean re bonus
 
 
