@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 09:34:02 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/24 00:19:03 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/24 01:03:11 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ static char				**ft_tab(char *s, char c, char **tab, size_t word)
 		if (!(tab[i] = ft_substr(s, start, (j - start))))
 		{
 			while (i > 0)
-			{
-				free(tab[i]);
-				i--;
-			}
+				free(tab[i--]);
 			free(tab);
 			return (NULL);
 		}
