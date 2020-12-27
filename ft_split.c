@@ -6,69 +6,80 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 09:34:02 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/24 01:03:11 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/27 20:48:02 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t			ft_word(char *scpy, char c)
+static int	ft_word(char *scpy, char c)
 {
-	size_t				word;
+	int		word;
+	int		issep;
 
+	issep = 1;
 	word = 0;
-	if (!*scpy)
+	if (!scpy)
 		return (0);
 	while (*scpy == c)
 		scpy++;
 	while (*scpy)
 	{
-		if (*scpy == c && *(scpy - 1) != c)
+		if (issep == 1 && *scpy != c)
 			word += 1;
+		if (*scpy == c)
+			issep = 1;
+		if (*scpy != c)
+			issep = 0;
 		scpy++;
 	}
-	if (*(scpy - 1) != c)
-		word += 1;
 	return (word);
 }
 
-static char				**ft_tab(char *s, char c, char **tab, size_t word)
+static char	**ft_tab(char *s, char c, char **tab, int word)
 {
-	size_t				i;
-	size_t				j;
-	unsigned int		start;
+	int				col;
+	int				empty;
+	unsigned int	index;
+	unsigned int	start;
 
-	i = 0;
-	j = 0;
-	while (i < word)
+	col = 0;
+	index = 0;
+	empty = 0;
+	while (col < word)
 	{
-		while (s[j] == c)
-			j++;
-		start = j;
-		while (s[j] != c && s[j] != '\0')
-			j++;
-		if (!(tab[i] = ft_substr(s, start, (j - start))))
+		while (s[index] == c)
+			index++;
+		start = index;
+		while (s[index] != c && s[index] != '\0')
+			index++;
+		if (!(tab[col] = ft_substr(s, start, index - start)))
 		{
-			while (i > 0)
-				free(tab[i--]);
-			free(tab);
+			while (empty < col)
+				free(tab[empty++]);
 			return (NULL);
 		}
-		i++;
+		col++;
 	}
-	tab[i] = NULL;
+	tab[col] = NULL;
 	return (tab);
 }
 
-char					**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
-	char				**tab;
-	size_t				word;
+	char	**tab;
+	int		word;
 
-	if (!c || !s)
+	tab = NULL;
+	if (!s)
 		return (NULL);
 	word = ft_word((char *)s, c);
 	if (!(tab = malloc(sizeof(char *) * (word + 1))))
 		return (NULL);
-	return (ft_tab((char *)s, c, tab, word));
+	if (!(tab = ft_tab((char *)s, c, tab, word)))
+	{
+		free(tab);
+		tab = NULL;
+	}
+	return (tab);
 }
