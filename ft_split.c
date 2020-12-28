@@ -6,7 +6,7 @@
 /*   By: mgallizz <mgallizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 09:34:02 by mgallizz          #+#    #+#             */
-/*   Updated: 2020/12/27 20:48:02 by mgallizz         ###   ########.fr       */
+/*   Updated: 2020/12/28 02:24:56 by mgallizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ static int	ft_word(char *scpy, char c)
 	word = 0;
 	if (!scpy)
 		return (0);
-	while (*scpy == c)
-		scpy++;
 	while (*scpy)
 	{
 		if (issep == 1 && *scpy != c)
